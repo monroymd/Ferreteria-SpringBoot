@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FerreteriaApplication<Ferreteria>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.elCosito.Ferreteria.FerreteriaApplication",
+            "projectName": "Ferreteria",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

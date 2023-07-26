@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Fabricantes</title>
+</head>
+
+<body>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Id del Fabricante</th>
+                <th scope="col">Nombre del Fabricante</th>
+            </tr>
+        </thead>
+        <tbody th:each="listaFabricantes : ${listaFabricantes}">
+            <tr>
+                <th scope="row" th:text="${listaFabricantes.id}"></th>
+                <td th:text="${listaFabricantes.nombre}"></td>
+                <td>
+                    <a th:href="@{/fabricante/__${listaFabricantes.id}__}"><i class="fas fa-feather-alt"> </i>Modificar
+                    </a>
+                    <a th:href="@{/fabricante/borrarFabricante/__${listaFabricantes.id}__}"><i
+                            class="fas fa-feather-alt">
+                        </i>Borrar
+                    </a>
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form th:action="@{/fabricante/cargaFabricante}" method="post">
+        <div>
+            <input type="text" name="nombre" placeholder="Nombre del Fabricante">
+        </div>
+        <div>
+            <button type="submit">Cargar</button>
+        </div>
+
+    </form>
+</body>
+
+</html>

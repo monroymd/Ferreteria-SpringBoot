@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form th:action="@{/fabricante/corregirFabricante/__${fabricante.id}__}" method="post">
+
+        <input hidden th:value="${id}" name="id">
+
+        <div>
+
+            <label class="mb-2">Cargar Fabricante</label>
+            <input th:value="${fabricante.nombre}" type="text" name="nombre" placeholder="Nombre del Fabricante">
+        </div>
+        <div>
+            <button type="submit">Cambiar</button>
+        </div>
+
+    </form>
+</body>
+
+</html>

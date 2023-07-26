@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form th:action="@{/producto/corregirProducto/__${producto.id}__}" method="post">
+
+        <input hidden th:value="${id}" name="id">
+        <div>
+
+            <label class="mb-2">Corregir Producto</label>
+            <input th:value="${producto.nombre}" type="text" name="nombre" placeholder="Nombre del Producto">
+        </div>
+        <div>
+            <label class="mb-2">Corregir cantidad</label>
+            <input th:value="${producto.cantidad}" type="number" name="cantidad" placeholder="Cantidad del Producto">
+        </div>
+        <div>
+            <select type="text" class="form-select form-select-sm" aria-label=".form-select-sm example"
+                name="idFabricante">
+                <option selected>Seleccione el Fabricante</option>
+                <div>
+                    <option th:each="fabricantes : ${listaFabricantes}" th:text="${fabricantes.nombre}"
+                        th:value="${fabricantes.id}"></option>
+                </div>
+            </select>
+
+        </div>
+        <div>
+
+            <select type="text" class="form-select form-select-sm" aria-label=".form-select-sm example" name="tipo">
+                <option selected>Seleccione el Tipo de producto</option>
+                <div th:each="tipos : ${tipo}">
+                    <option th:text="${tipos}"></option>
+                </div>
+            </select>
+
+        </div>
+        <div>
+            <button type="submit">Cambiar</button>
+        </div>
+
+    </form>
+</body>
+
+</html>

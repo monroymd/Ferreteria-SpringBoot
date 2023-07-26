@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form th:action="@{/producto/cargaProducto}" method="post">
+        <div>
+            <input type="text" name="nombre" placeholder="Nombre del Producto">
+        </div>
+        <div>
+            <input type="number" name="cantidad" placeholder="CANTIDAD">
+        </div>
+        <div>
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="idFabricante">
+                <option selected>Seleccione el Fabricante</option>
+                <div>
+                    <option th:each="fabricantes : ${listaFabricantes}" th:text="${fabricantes.nombre}"
+                        th:value="${fabricantes.id}"></option>
+                </div>
+            </select>
+
+        </div>
+        <div>
+
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="tipo">
+                <option selected>Seleccione el Tipo de producto</option>
+                <div th:each="tipos : ${tipo}">
+                    <option th:text="${tipos}"></option>
+                </div>
+            </select>
+
+        </div>
+        <div>
+            <button type="submit">Cargar</button>
+        </div>
+
+    </form>
+</body>
+
+</html>
